@@ -1,10 +1,11 @@
 examples: out/examples
 	cd examples && ../out/examples
 
-out/examples: *.cpp ../*.h
+out/examples: *.cpp ../include/plot/*.h
 	mkdir -p out
 	g++ -std=c++11 -g -O3 \
 		-Wall -Wextra -Wfatal-errors -Wpedantic -pedantic-errors \
+		-I ../include \
 		examples.cpp -o out/examples
 
 clean:
@@ -14,7 +15,7 @@ doxygen:
 	doxygen Doxyfile-local
 
 	# Files linked from the README
-	cp ../*.h html/
+	cp ../include/plot/*.h html/
 	cp ../LICENSE.txt html/LICENSE.txt
 	mkdir -p html/doc/examples
 	cp examples.cpp html/doc/examples.cpp

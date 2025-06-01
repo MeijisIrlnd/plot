@@ -1,5 +1,5 @@
-#include "../plot.h"
-#include "../heatmap.h"
+#include <plot/plot.h>
+#include <plot/heatmap.h>
 
 #include <cmath>
 #include <algorithm>
